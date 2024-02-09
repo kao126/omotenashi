@@ -3,7 +3,7 @@ interface Props {
   setCount: Dispatch<SetStateAction<number>>;
 }
 
-const resetBtn = ({ setCount }: Props) => {
+const ResetBtn = ({ setCount }: Props) => {
   const handleReset = () => {
     setCount(0);
   };
@@ -15,4 +15,4 @@ const resetBtn = ({ setCount }: Props) => {
   );
 };
 
-export default resetBtn;
+export default ResetBtn;

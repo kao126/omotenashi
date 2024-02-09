@@ -4,7 +4,7 @@ interface Props {
   setCount: Dispatch<SetStateAction<number>>;
 }
 
-const decrementBtn = ({ setCount }: Props) => {
+const DecrementBtn = ({ setCount }: Props) => {
   const handleDecrement = () => {
     setCount((prevCount) => (prevCount == 0 ? prevCount : prevCount - 1));
   };
@@ -16,4 +16,4 @@ const decrementBtn = ({ setCount }: Props) => {
   );
 };
 
-export default decrementBtn;
+export default DecrementBtn;

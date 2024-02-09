@@ -16,7 +16,7 @@ type BeverageOptionType = {
   options: OptionType[];
 };
 
-const page = () => {
+const Page = () => {
   const {
     register,
     setValue,
@@ -93,4 +93,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

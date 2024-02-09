@@ -5,7 +5,7 @@ interface Props {
   setCount: Dispatch<SetStateAction<number>>;
 }
 
-const incrementBtn = ({ times, setCount }: Props) => {
+const IncrementBtn = ({ times, setCount }: Props) => {
   const handleIncrement = () => {
     setCount((prevCount) => prevCount + times);
   };
@@ -23,4 +23,4 @@ const incrementBtn = ({ times, setCount }: Props) => {
   );
 };
 
-export default incrementBtn;
+export default IncrementBtn;

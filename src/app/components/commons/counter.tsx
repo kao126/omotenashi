@@ -4,7 +4,7 @@ import ResetBtn from './resetBtn';
 import IncrementBtn from './incrementBtn';
 import DecrementBtn from './decrementBtn';
 
-const counter = () => {
+const Counter = () => {
   const [count, setCount] = useState<number>(0);
 
   return (
@@ -23,4 +23,4 @@ const counter = () => {
   );
 };
 
-export default counter;
+export default Counter;
