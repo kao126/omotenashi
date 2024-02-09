@@ -2,6 +2,9 @@
 import React from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import Creatable from "react-select/creatable";
+import ResetBtn from './components/commons/resetBtn';
+import IncreaseBtn from './components/commons/increaseBtn';
+import DecreaseBtn from './components/commons/decreaseBtn';
 
 // types
 import { FormData } from "./type/form";
@@ -89,7 +92,10 @@ export default function Home() {
         >
           reset
         </button>
-    </form>
+        <ResetBtn />
+        <IncreaseBtn />
+        <DecreaseBtn />
+      </form>
     </main>
   );
 }
