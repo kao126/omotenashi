@@ -5,6 +5,7 @@ import Creatable from "react-select/creatable";
 import ResetBtn from './components/commons/resetBtn';
 import IncreaseBtn from './components/commons/increaseBtn';
 import DecreaseBtn from './components/commons/decreaseBtn';
+import Link from 'next/link';
 
 // types
 import { FormData } from "./type/form";
@@ -54,48 +55,9 @@ export default function Home() {
         <div>コーヒー 5</div>
         <div>水 6</div> 
       </div>
-      <form onSubmit={onSubmit}>
-        <Controller
-          name="beverageName"
-          control={control}
-          render={({ field }) => (
-            <Creatable
-              options={beverageOptions}
-              formatGroupLabel={(data) => data.label}
-              // options={beverageOptions}
-              // value={beverageOptions.find((x) => x.value == field.value)}
-              // onChange={(newValue) => {
-              //   field.onChange(newValue);
-              // }}
-            />
-          )}
-        />
-        <label>数量</label>
-        <input {...register("amount")} type="number" />
-        <label>賞味期限</label>
-        <input {...register("expirationDate")} type="date" />
-        <label>購入日</label>
-        <input {...register("purchaseDate")} type="date" />
-        <button
-          type="button"
-          onClick={() => {
-            setValue("beverageName", "おーいお茶");
-          }}
-        >
-          SetValue
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            reset();
-          }}
-        >
-          reset
-        </button>
-        <ResetBtn />
-        <IncreaseBtn />
-        <DecreaseBtn />
-      </form>
+      <Link href="/new_lots">
+        <div className="text-3xl text-center">在庫登録</div>
+      </Link>
     </main>
   );
 }
