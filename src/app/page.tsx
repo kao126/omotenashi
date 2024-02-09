@@ -3,12 +3,8 @@ import React from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import Creatable from "react-select/creatable";
 
-type FormData = {
-  beverageName: string;
-  amount: number;
-  expirationDate: Date;
-  purchaseDate: Date;
-};
+// types
+import { FormData } from "./type/form";
 
 type OptionType = {
   value: string;
