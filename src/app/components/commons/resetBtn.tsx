@@ -1,19 +1,16 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { Dispatch, SetStateAction } from 'react';
+interface Props {
+  setCount: Dispatch<SetStateAction<number>>;
+}
 
-// types
-import { FormData } from "../../type/form";
+const resetBtn = ({ setCount }: Props) => {
+  const handleReset = () => {
+    setCount(0);
+  };
 
-const resetBtn = () => {
-  const { reset } = useForm<FormData>();
   return (
-    <button
-      type="button"
-      onClick={() => {
-        reset();
-      }}
-    >
-      reset
+    <button type="button" className="text-3xl" onClick={handleReset}>
+      RESET
     </button>
   );
 };
