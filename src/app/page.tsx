@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import Creatable from 'react-select/creatable';
-import Link from 'next/link';
 
 import Counter from './components/commons/counter';
 import Button from './components/commons/button';
+import Footer from './components/commons/footer';
 
 // types
 import { FormData } from './types/form';
@@ -75,12 +75,9 @@ export default function Home() {
       </div>
       <Counter />
 
-      <Link href="/new_lots">
-        <div className="text-3xl text-center">在庫登録</div>
-      </Link>
-    </main>
         <div className="text-3xl text-gray-700 font-bold text-center">
           <Button disabled={false}>登録</Button>
         </div>
+      <Footer />
   );
 }
