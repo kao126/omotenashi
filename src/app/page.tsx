@@ -54,30 +54,33 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen">
-      <div className="text-3xl my-9 text-gray-700 font-bold text-center w-1/5 border-b-2 border-solid border-b-slate-300 mx-auto">
-        <span className="inline-block mb-3">在庫数</span>
-      </div>
-      <div className="flex items-center justify-evenly p-12">
-        {beverageOptions.map((beverage, i) => (
-          <div key={i} className="w-full text-center">
-            <div className="text-3xl">{beverage.label}</div>
-            <div className="flex gap-1">
-              {beverage.options.map((option, idx) => (
-                <div key={idx} className="w-full text-2xl">
-                  <div>{option.label}</div>
-                  <div>{option.value}</div>
-                </div>
-              ))}
+    <>
+      <main className="min-h-screen">
+        <div className="text-3xl pt-9 text-gray-700 font-bold text-center w-1/5 border-b-2 border-solid border-b-slate-300 mx-auto">
+          <span className="inline-block mb-3">在庫数</span>
+        </div>
+        <div className="flex items-center justify-evenly p-12">
+          {beverageOptions.map((beverage, i) => (
+            <div key={i} className="w-full text-center">
+              <div className="text-3xl">{beverage.label}</div>
+              <div className="flex gap-1">
+                {beverage.options.map((option, idx) => (
+                  <div key={idx} className="w-full text-2xl">
+                    <div>{option.label}</div>
+                    <div>{option.value}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <Counter />
+          ))}
+        </div>
+        <Counter />
 
         <div className="text-3xl text-gray-700 font-bold text-center">
           <Button disabled={false}>登録</Button>
         </div>
+      </main>
       <Footer />
+    </>
   );
 }

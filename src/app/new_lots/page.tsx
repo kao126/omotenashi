@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import Creatable from 'react-select/creatable';
 
+import Button from '../components/commons/button';
+
 // types
 import { FormData } from '../types/form';
 
@@ -51,44 +53,47 @@ const Page = () => {
     },
   ];
   return (
-    <main className="min-h-screen">
-      <div className="text-3xl my-9 text-gray-700 font-bold text-center w-1/5 border-b-2 border-solid border-b-slate-300 mx-auto">
+    <main className="w-1/2 min-h-screen mx-auto">
+      <div className="text-3xl pt-9 text-gray-700 font-bold text-center w-1/5 border-b-2 border-solid border-b-slate-300 mx-auto">
         <span className="inline-block mb-3">在庫追加</span>
       </div>
-      <form onSubmit={onSubmit}>
-        <Controller
-          name="beverageName"
-          control={control}
-          render={() => (
-            <Creatable
-              options={beverageOptions}
-              formatGroupLabel={(data) => data.label}
-            />
-          )}
-        />
-        <label>数量</label>
-        <input {...register('amount')} type="number" />
-        <label>賞味期限</label>
-        <input {...register('expirationDate')} type="date" />
-        <label>購入日</label>
-        <input {...register('purchaseDate')} type="date" />
-        <button
-          type="button"
-          onClick={() => {
-            setValue('beverageName', 'おーいお茶');
-          }}
-        >
-          SetValue
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            reset();
-          }}
-        >
-          reset
-        </button>
-      </form>
+      <div className="h-96 align-middle bg-slate-100 my-24">
+        <form onSubmit={onSubmit} className=" w-10/12 h-full py-12 mx-auto">
+          <label>種類</label>
+          <Controller
+            name="beverageName"
+            control={control}
+            render={() => (
+              <Creatable
+                options={beverageOptions}
+                formatGroupLabel={(data) => data.label}
+              />
+            )}
+          />
+          <div>
+            <label>数量</label>
+            <p>
+              <input {...register('amount')} type="number" />
+            </p>
+          </div>
+          <div>
+            <label>賞味期限</label>
+            <p>
+              <input {...register('expirationDate')} type="date" />
+            </p>
+          </div>
+          <div>
+            <label>購入日</label>
+            <p>
+              <input {...register('purchaseDate')} type="date" />
+            </p>
+          </div>
+          <div className="flex justify-evenly mt-10">
+            <Button disabled={false}>追加</Button>
+            <Button disabled={false}>リセット</Button>
+          </div>
+        </form>
+      </div>
     </main>
   );
 };
