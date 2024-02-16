@@ -5,6 +5,7 @@ import Creatable from 'react-select/creatable';
 import Link from 'next/link';
 
 import Counter from './components/commons/counter';
+import Button from './components/commons/button';
 
 // types
 import { FormData } from './types/form';
@@ -78,5 +79,8 @@ export default function Home() {
         <div className="text-3xl text-center">在庫登録</div>
       </Link>
     </main>
+        <div className="text-3xl text-gray-700 font-bold text-center">
+          <Button disabled={false}>登録</Button>
+        </div>
   );
 }
