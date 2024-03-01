@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
+import { NextUIProvider } from '@nextui-org/react';
 import Creatable from 'react-select/creatable';
 
 import Counter from './components/commons/counter';
@@ -54,7 +55,7 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <NextUIProvider>
       <main className="min-h-screen">
         <div className="text-3xl pt-9 text-gray-700 font-bold text-center w-1/5 border-b-2 border-solid border-b-slate-300 mx-auto">
           <span className="inline-block mb-3">在庫数</span>
@@ -81,6 +82,6 @@ export default function Home() {
         </div>
       </main>
       <Footer />
-    </>
+    </NextUIProvider>
   );
 }
