@@ -11,6 +11,17 @@ import Footer from './components/commons/footer';
 // types
 import { FormData } from './types/form';
 
+import ocha from '../../public/ocha.jpeg';
+
+import {
+  Spacer,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Image,
+} from '@nextui-org/react';
+
 type OptionType = {
   value: string;
   label: string;
@@ -62,17 +73,37 @@ export default function Home() {
         </div>
         <div className="flex items-center justify-evenly p-12">
           {beverageOptions.map((beverage, i) => (
-            <div key={i} className="w-full text-center">
-              <div className="text-3xl">{beverage.label}</div>
-              <div className="flex gap-1">
-                {beverage.options.map((option, idx) => (
-                  <div key={idx} className="w-full text-2xl">
-                    <div>{option.label}</div>
-                    <div>{option.value}</div>
-                  </div>
-                ))}
+            <>
+              <div key={i} className="w-full text-center">
+                <div className="text-3xl">{beverage.label}</div>
+                <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
+                  {beverage.options.map((option, idx) => (
+                    <Card
+                      key={idx}
+                      shadow="sm"
+                      isPressable
+                      onPress={() => console.log('item pressed')}
+                    >
+                      <CardBody className="overflow-visible p-0">
+                        <Image
+                          shadow="sm"
+                          radius="lg"
+                          width="100%"
+                          alt={option.label}
+                          className="w-full object-contain h-[160px]"
+                          src={ocha.src}
+                        />
+                      </CardBody>
+                      <CardFooter className="text-small justify-between">
+                        <b>{option.label}</b>
+                        <p className="text-default-500">{option.value}</p>
+                      </CardFooter>
+                    </Card>
+                  ))}
+                </div>
               </div>
-            </div>
+              <Spacer x={4} />
+            </>
           ))}
         </div>
         <Counter />

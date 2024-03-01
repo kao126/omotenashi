@@ -10,7 +10,7 @@ const Counter = () => {
   return (
     <div className="w-1/3 mx-auto my-28">
       <div className="flex justify-center items-end gap-3 mb-12">
-        <div className="text-3xl">count</div>
+        {/* <div className="text-3xl">count</div> */}
         <div className="text-9xl">{count}</div>
       </div>
       <div className="w-full flex justify-evenly items-center">
